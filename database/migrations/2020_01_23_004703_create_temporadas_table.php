@@ -17,6 +17,7 @@ class CreateTemporadasTable extends Migration
             $table->bigIncrements('id');
             $table->integer('numero');
             $table->integer('serie_id');
+
             $table->foreign('serie_id')
                 ->references('id')
                 ->on('series');
