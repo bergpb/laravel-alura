@@ -8,8 +8,10 @@ use App\Serie;
 class TemporadasController extends Controller
 {
     public function index(int $serieId) {
-        $temporada = Serie::find($serieId->temporadas);
+        $serie = Serie::find($serieId);
+        $temporadas = $serie->temporadas;
 
-        return view('temporadas.index', compact($temporada));
+        return view('temporadas.index',
+        compact('serie','temporadas'));
     }
 }
